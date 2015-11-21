@@ -32,8 +32,7 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui
 
-DISTFILES += \
-    test
+DISTFILES +=
 
 RESOURCES += \
     b100.qrc \
