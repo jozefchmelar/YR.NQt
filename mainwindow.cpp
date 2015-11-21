@@ -45,6 +45,8 @@ void MainWindow::displayToday(int plus)
         textForecast[i]->setText(nameOfDay+"\n"+from+"-"+to+"\n"+temp+"°C");
         textForecast[i]->setAlignment(Qt::AlignCenter);
         textForecast[i]->setAlignment(Qt::AlignHCenter);
+        symbolForecast[i]->setAlignment(Qt::AlignCenter);
+        symbolForecast[i]->setAlignment(Qt::AlignHCenter);
         displaySymbol(symbolName,symbolForecast[i],false);
     }
 }
@@ -64,14 +66,13 @@ void MainWindow::initComponents(ForecastData now,QLabel *TodaySymbol, QLabel *te
 void MainWindow::displaySymbol(QString symbolVar,QLabel *label, bool big)
 {
     if(big){
-        symbolToDisplay = "://b200/";
         label->setMinimumHeight(200);
         label->setMinimumWidth(200);
+        symbolToDisplay = "://b200/";
     }
     else{
         label->setMinimumHeight(100);
         label->setMinimumWidth(100);
-
         symbolToDisplay = ":/b100/";
     }
     symbolToDisplay+=symbolVar+".png";
@@ -86,16 +87,12 @@ void MainWindow::forecastToday(int numberOfHours)
     QDateTime future= currentForecast.at(0).getFrom().addSecs(numberOfHours*60*60);
     for(int i=0;i<currentForecast.size();i++){
         ForecastData current = currentForecast.at(i);
-        if(current.getTo()<future){
-            //ui->LabelPlusHours->append(current.getTo().toString("dd MMM HH:mm:ss"));
-        }
-
-
     }
 }
 
 QList<QString> MainWindow::listOfDays()
 {
+    // i know i know I could do this much better.
     QString day="";
     QList<QString> list;
     for(int i=0;i<currentForecast.size();i++){

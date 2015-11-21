@@ -15,20 +15,13 @@ public:
     void doDownload(QUrl urlAdress);
     QDomDocument doDownDoc(QUrl urlAdress);
     QDomDocument* domdoc;
-
-signals:
 private:
-     QNetworkRequest *request;
+    QNetworkRequest *request;
     QNetworkAccessManager *manager;
     QNetworkReply *reply;
-
 private slots:
     void error(QNetworkReply::NetworkError err);
     void finished();
-
-
-
-public slots:
 };
 
 #endif // DOWNLOAD_H

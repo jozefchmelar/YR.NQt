@@ -1,17 +1,13 @@
 #ifndef FORECASTDATA_H
 #define FORECASTDATA_H
 
-
 #include <QDateTime>
 #include <QList>
 #include <QStaticText>
 
-
 class ForecastData {
 public:
     explicit ForecastData();
-
-
 
     QDateTime getFrom() const;
     void setFrom(QDateTime value);

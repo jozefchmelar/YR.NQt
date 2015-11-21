@@ -84,11 +84,7 @@ QString WeatherData::toQString()
     result+= "nextupdate: " + nextupdate.toString("HH:mm") +"\n";
     result+= "sunrise: " + sunrise.toString("HH:mm") +"\n";
     result+= "sunset: " + sunset.toString("HH:mm") +"\n";
-
-    //    for(int i=0;i<forecast.size();i++){
-    //         result +=  "\n"+forecast.at(i).toString();
-    //    }
-    //    return result;
+    return result;
 }
 
 double WeatherData::averageTemperature(QDate date)
@@ -98,7 +94,7 @@ double WeatherData::averageTemperature(QDate date)
     for(int i=0;i<forecast.size();i++){
         if(forecast.at(i).getTo().date()==date){
             avg += forecast.at(i).getTemperature().toDouble();
-            count +=1;
+            count++;
         }
     }
     double result = avg/count;

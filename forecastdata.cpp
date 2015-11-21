@@ -85,7 +85,7 @@ void ForecastData::setTemperature(  QString value)
     temperature = value;
 }
 
- QString ForecastData::toString()
+QString ForecastData::toString()
 {
     QString result = "From: "+from.toString("ddd.HH:mm") +"\n";
     result += "to:"+to.toString("ddd.HH:mm") +"\n";
@@ -98,23 +98,22 @@ void ForecastData::setTemperature(  QString value)
     result += "temperature: "+temperature  +"°C\n";
     result += "------------------";
     return result;
- }
+}
 
- QString ForecastData::getToday()
- {
-     QString result;
+QString ForecastData::getToday()
+{
+    QString result;
+    return result;
+}
 
-      return result;
- }
+QString ForecastData::getSymbolVar() const
+{
+    return symbolVar;
+}
 
- QString ForecastData::getSymbolVar() const
- {
-     return symbolVar;
- }
-
- void ForecastData::setSymbolVar(  QString  value)
- {
-     symbolVar = value;
- }
+void ForecastData::setSymbolVar(  QString  value)
+{
+    symbolVar = value;
+}
 
 
